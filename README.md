@@ -6,6 +6,8 @@ This project was developed with the aim of implementing a neural network for ima
 
 The culmination of this project led to the successful training of a simple neural network model on the MNIST dataset. The model achieved an impressive 93% accuracy on the test set, demonstrating the effectiveness of the implemented neural network and the underlying matrix library.
 
+![Neural Network](end_training_screenshot.png)
+
 ## Project Overview
 
 The neural network project is divided into two primary components: the neural network module and a matrix library that supports various operations on matrices.
