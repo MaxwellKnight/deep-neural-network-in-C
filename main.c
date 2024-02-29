@@ -23,7 +23,7 @@ int main(){
 	Image **imgs_train = load_images("./data/mnist_train.csv", TRAIN_SET_SIZE);
 	matrix **train_set = split_images(imgs_train, TRAIN_SET_SIZE);
 	// NeuralNetwork *nn = createNetwork(TOPOLOGY, LAYERS, 0.0095);
-	NeuralNetwork *nn = load_network("./parameters_v1", TOPOLOGY, LAYERS);
+	NeuralNetwork *nn = load_network("./_parameters_v1", TOPOLOGY, LAYERS);
 
 
 	//first test of the nn without training
