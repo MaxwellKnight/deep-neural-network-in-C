@@ -14,7 +14,7 @@ The neural network project is divided into two primary components: the neural ne
 
 ### `NeuralNetwork` Struct
 
-```bash
+```c_cpp
 struct NeuralNetwork {
 	int *topology;
 	int layers;
@@ -29,7 +29,7 @@ NeuralNetwork structure encapsulates the neural network model, including the num
 
 ### Neural Network Initialization (`createNetwork`)
 
-```bash
+```c_cpp
 NeuralNetwork* createNetwork(const int topology[], int n, double learning_rate);
 ```
 
@@ -42,7 +42,7 @@ Returns: A pointer to the initialized NeuralNetwork structure.
 
 ### Forward Propagation (`forward`)
 
-```bash
+```c_cpp
 matrix* forward(NeuralNetwork *nn, matrix *X, int isMulticalss);
 ```
 
@@ -55,7 +55,7 @@ Returns: Output matrix after forward propagation.
 
 ### Cost Functions (`cost` and `cross_entropy`)
 
-```bash
+```c_cpp
 double cross_entropy(matrix* AL, matrix* Y);
 double cost(matrix* AL, matrix* Y);
 ```
@@ -68,7 +68,7 @@ Returns: Cost value.
 
 ### Prediction Function (`predict`)
 
-```bash
+```c_cpp
 matrix* predict(NeuralNetwork *nn, matrix* X, int isMulticlass);
 ```
 
@@ -81,7 +81,7 @@ Returns: Modified output matrix for multi-class classification.
 
 ### Backward Propagation (`propagate`)
 
-```bash
+```c_cpp
 Gradient** propagate(NeuralNetwork *nn, matrix *AL, matrix *Y);
 ```
 
@@ -94,7 +94,7 @@ Returns: Array of gradients for each layer.
 
 ### Update Parameters (`updateParameters`)
 
-```bash
+```c_cpp
 void updateParameters(NeuralNetwork *nn, Gradient **grads);
 
 ```
@@ -106,7 +106,7 @@ Parameters:
 
 ### Activation Functions (`sigmoid`, `relu`, `sigmoid_backward`, `relu_backward`)
 
-```bash
+```c_cpp
 double sigmoid_backward(double x);
 double sigmoid(double x);
 double relu(double x);
@@ -118,7 +118,7 @@ Description: Implements sigmoid and ReLU activation functions and their correspo
 
 ## Matrix Library
 
-```bash
+```c_cpp
 # Operations on matrices
 matrix* add(matrix *A, matrix *B);
 matrix* subtract(matrix *A, matrix *B);
