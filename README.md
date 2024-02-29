@@ -37,17 +37,17 @@ NeuralNetwork* createNetwork(const int topology[], int n, double learning_rate);
 
 #### Description:
 
-Allocates memory for the neural network and initializes its parameters.\
+Allocates memory for the neural network and initializes its parameters.
 
 #### Parameters:
 
 `const int *topology`: Array specifying the number of neurons in each layer.\
 `int n`: Number of layers.\
-`double learning_rate`: Learning rate for gradient descent.\
+`double learning_rate`: Learning rate for gradient descent.
 
 #### Returns:
 
-A pointer to the initialized NeuralNetwork structure.\
+A pointer to the initialized NeuralNetwork structure.
 
 ### Forward Propagation (`forward`)
 
@@ -57,17 +57,17 @@ matrix* forward(NeuralNetwork *nn, matrix *X, int isMulticalss);
 
 #### Description:
 
-Performs forward propagation through the neural network.\
+Performs forward propagation through the neural network.
 
 #### Parameters:
 
 `NeuralNetwork *nn`: Pointer to the neural network.\
 `matrix *X`: Input matrix.\
-`int isMulticlass`: Flag for multi-class classification.\
+`int isMulticlass`: Flag for multi-class classification.
 
 #### Returns:
 
-Output matrix after forward propagation.\
+Output matrix after forward propagation.
 
 ### Cost Functions (`cost` and `cross_entropy`)
 
@@ -97,17 +97,17 @@ matrix* predict(NeuralNetwork *nn, matrix* X, int isMulticlass);
 
 #### Description:
 
-Performs forward propagation and modifies the output for multi-class classification.\
+Performs forward propagation and modifies the output for multi-class classification.
 
 #### Parameters:
 
 `NeuralNetwork *nn`: Pointer to the neural network.\
 `matrix* X`: Input matrix.\
-int isMulticlass: Flag for multi-class classification.\
+int isMulticlass: Flag for multi-class classification.
 
 #### Returns:
 
-Modified output matrix for multi-class classification.\
+Modified output matrix for multi-class classification.
 
 ### Backward Propagation (`propagate`)
 
@@ -117,17 +117,17 @@ Gradient** propagate(NeuralNetwork *nn, matrix *AL, matrix *Y);
 
 #### Description:
 
-Computes gradients for weights and biases using backward propagation.\
+Computes gradients for weights and biases using backward propagation.
 
 #### Parameters:
 
 `NeuralNetwork *nn`: Pointer to the neural network.\
 `matrix *AL`: Output matrix after forward propagation.\
-`matrix *Y`: True labels matrix.\
+`matrix *Y`: True labels matrix.
 
 #### Returns:
 
-Array of gradients for each layer.\
+Array of gradients for each layer.
 
 ### Update Parameters (`updateParameters`)
 
@@ -138,12 +138,12 @@ void updateParameters(NeuralNetwork *nn, Gradient **grads);
 
 #### Description:
 
-Updates weights and biases using gradient descent.\
+Updates weights and biases using gradient descent.
 
 #### Parameters:
 
 `NeuralNetwork *nn`: Pointer to the neural network.\
-`Gradient **grads`: Array of gradients for each layer.\
+`Gradient **grads`: Array of gradients for each layer.
 
 ### Activation Functions (`sigmoid`, `relu`, `sigmoid_backward`, `relu_backward`)
 
@@ -193,7 +193,7 @@ The matrix library provides basic operations on matrices, including addition, su
 
 Use `createMatrix` to initialize matrices.\
 Use `copyMatrix` to create a deep copy of a matrix.\
-Use `fill` to fill a matrix with a specified value.\
+Use `fill` to fill a matrix with a specified value.
 
 ### Matrix Operations:
 
@@ -204,26 +204,26 @@ Use `sum` and summation for summation along specified axes.\
 Use `flatten` to convert a matrix into a vector.\
 Use `apply` to apply a function element-wise to a matrix.\
 Use `dot` for the dot product of matrices.\
-Use `T` to transpose a matrix.\
+Use `T` to transpose a matrix.
 
 ### Determinant Functions:
 
-Use `det` to compute the determinant of a matrix.\
+Use `det` to compute the determinant of a matrix.
 
 ### Probability Functions:
 
 Use `softmax` for applying the softmax function.\
-Use `argmax` to find the index of the maximum value in a column vector.\
+Use `argmax` to find the index of the maximum value in a column vector.
 
 ### Random Functions:
 
 Use `uniform_distribution` to generate random numbers.\
-Use `randomize_matrix` to randomize the entries of a matrix.\
+Use `randomize_matrix` to randomize the entries of a matrix.
 
 ### Load and Save Functions:
 
 Use `load_matrix` to load a matrix from a file.\
-Use `save_matrix` to save a matrix to a file.\
+Use `save_matrix` to save a matrix to a file.
 
 ## Contribution and License
 
