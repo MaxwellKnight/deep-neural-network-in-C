@@ -15,37 +15,32 @@ const int TOPOLOGY[LAYERS] = {784, 300, 10};
 // const int TOPOLOGY[LAYERS] = {784, 300, 100, 50, 10};
 
 double test_nn(NeuralNetwork* nn, char *path);
-double train_nn(NeuralNetwork *nn, Batch** batches, int size, int epochs);
+double train_nn(NeuralNetwork *nn, matrix **train_set, int size, int epochs);
 double calculateTime(struct timeval begin, struct timeval end);
 
 int main(){
+	struct timeval begin, end;
 	Image **imgs_train = load_images("./data/mnist_train.csv", TRAIN_SET_SIZE);
 	matrix **train_set = split_images(imgs_train, TRAIN_SET_SIZE);
-	NeuralNetwork *nn = createNetwork(TOPOLOGY, LAYERS, 0.0095);
-	// NeuralNetwork *nn = load_network("./parameters_v1", TOPOLOGY, LAYERS);
+	// NeuralNetwork *nn = createNetwork(TOPOLOGY, LAYERS, 0.0095);
+	NeuralNetwork *nn = load_network("./parameters_v1", TOPOLOGY, LAYERS);
 
-	struct timeval begin, end;
 
 	//first test of the nn without training
 	double accuracyFirst = test_nn(nn, "./data/mnist_test.csv");
 	printf("Accuracy on test set (%d Images): %.2lf%% . \n", TEST_SET_SIZE, accuracyFirst);
 
-	Batch** batches = split_into_mini_batches(train_set, TRAIN_SET_SIZE, BATCH_SIZE);
+	// gettimeofday(&begin, 0); //start training time
+	// double avgLoss = train_nn(nn, train_set, TRAIN_SET_SIZE, 100);
+	// gettimeofday(&end, 0); // end training time
+	// double elapsed = calculateTime(begin , end);
 
-	gettimeofday(&begin, 0); //start training time
-
-	double avgLoss = train_nn(nn, batches, TRAIN_SET_SIZE / BATCH_SIZE, 100);
-
-	gettimeofday(&end, 0); // end training time
-
-	double elapsed = calculateTime(begin , end);
-
-	//test again after training
-	double accuracy = test_nn(nn, "./data/mnist_test.csv");
-	printf("Accuracy before training: %.2lf%% . \n", accuracyFirst);
-	printf("Accuracy after training: %.2lf%% . \n", accuracy);
-	printf("Average loss: %.2lf .\n", avgLoss);
-	printf("Time measured: %.3f seconds.\n", elapsed);
+	// //test again after training
+	// double accuracy = test_nn(nn, "./data/mnist_test.csv");
+	// printf("Accuracy before training: %.2lf%% . \n", accuracyFirst);
+	// printf("Accuracy after training: %.2lf%% . \n", accuracy);
+	// printf("Average loss: %.2lf .\n", avgLoss);
+	// printf("Time measured: %.3f seconds.\n", elapsed);
 
 	// save_network(nn, "./parameters_v3");
 
@@ -53,7 +48,9 @@ int main(){
 	return 0;
 }
 
-double train_nn(NeuralNetwork *nn, Batch** batches, int size, int epochs) {
+double train_nn(NeuralNetwork *nn, matrix **train_set, int size, int epochs) {
+	Batch** batches = split_into_mini_batches(train_set, TRAIN_SET_SIZE, BATCH_SIZE);
+
 	double loss = 0;
 	for(int i = 0; i < epochs; i++){
 		loss = 0;
