@@ -1,4 +1,4 @@
-# Neural Network Project README
+# Neural Network Project
 
 This project was developed with the aim of implementing a neural network for image classification using the MNIST dataset. Throughout the development process, one of the key challenges revolved around ensuring the correctness of both forward and backward propagation. Achieving accurate dimensions for each neuron and layer during forward propagation was essential for the proper functioning of the neural network. Similarly, implementing backpropagation and accurately calculating gradients posed significant challenges.
 
