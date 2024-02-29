@@ -33,12 +33,12 @@ NeuralNetwork structure encapsulates the neural network model, including the num
 NeuralNetwork* createNetwork(const int topology[], int n, double learning_rate);
 ```
 
-Description: Allocates memory for the neural network and initializes its parameters.
-Parameters:
-`const int *topology`: Array specifying the number of neurons in each layer.
-`int n`: Number of layers.
-`double learning_rate`: Learning rate for gradient descent.
-Returns: A pointer to the initialized NeuralNetwork structure.
+Description: Allocates memory for the neural network and initializes its parameters.\
+Parameters:\
+`const int *topology`: Array specifying the number of neurons in each layer.\
+`int n`: Number of layers.\
+`double learning_rate`: Learning rate for gradient descent.\
+Returns: A pointer to the initialized NeuralNetwork structure.\
 
 ### Forward Propagation (`forward`)
 
@@ -46,12 +46,12 @@ Returns: A pointer to the initialized NeuralNetwork structure.
 matrix* forward(NeuralNetwork *nn, matrix *X, int isMulticalss);
 ```
 
-Description: Performs forward propagation through the neural network.
-Parameters:
-`NeuralNetwork *nn`: Pointer to the neural network.
-`matrix *X`: Input matrix.
-`int isMulticlass`: Flag for multi-class classification.
-Returns: Output matrix after forward propagation.
+Description: Performs forward propagation through the neural network.\
+Parameters:\
+`NeuralNetwork *nn`: Pointer to the neural network.\
+`matrix *X`: Input matrix.\
+`int isMulticlass`: Flag for multi-class classification.\
+Returns: Output matrix after forward propagation.\
 
 ### Cost Functions (`cost` and `cross_entropy`)
 
@@ -72,12 +72,12 @@ Returns: Cost value.
 matrix* predict(NeuralNetwork *nn, matrix* X, int isMulticlass);
 ```
 
-Description: Performs forward propagation and modifies the output for multi-class classification.
-Parameters:
-`NeuralNetwork *nn`: Pointer to the neural network.
-`matrix* X`: Input matrix.
-int isMulticlass: Flag for multi-class classification.
-Returns: Modified output matrix for multi-class classification.
+Description: Performs forward propagation and modifies the output for multi-class classification.\
+Parameters:\
+`NeuralNetwork *nn`: Pointer to the neural network.\
+`matrix* X`: Input matrix.\
+int isMulticlass: Flag for multi-class classification.\
+Returns: Modified output matrix for multi-class classification.\
 
 ### Backward Propagation (`propagate`)
 
@@ -85,12 +85,12 @@ Returns: Modified output matrix for multi-class classification.
 Gradient** propagate(NeuralNetwork *nn, matrix *AL, matrix *Y);
 ```
 
-Description: Computes gradients for weights and biases using backward propagation.
-Parameters:
-`NeuralNetwork *nn`: Pointer to the neural network.
-`matrix *AL`: Output matrix after forward propagation.
-`matrix *Y`: True labels matrix.
-Returns: Array of gradients for each layer.
+Description: Computes gradients for weights and biases using backward propagation.\
+Parameters:\
+`NeuralNetwork *nn`: Pointer to the neural network.\
+`matrix *AL`: Output matrix after forward propagation.\
+`matrix *Y`: True labels matrix.\
+Returns: Array of gradients for each layer.\
 
 ### Update Parameters (`updateParameters`)
 
@@ -99,10 +99,10 @@ void updateParameters(NeuralNetwork *nn, Gradient **grads);
 
 ```
 
-Description: Updates weights and biases using gradient descent.
-Parameters:
-`NeuralNetwork *nn`: Pointer to the neural network.
-`Gradient **grads`: Array of gradients for each layer.
+Description: Updates weights and biases using gradient descent.\
+Parameters:\
+`NeuralNetwork *nn`: Pointer to the neural network.\
+`Gradient **grads`: Array of gradients for each layer.\
 
 ### Activation Functions (`sigmoid`, `relu`, `sigmoid_backward`, `relu_backward`)
 
@@ -148,11 +148,11 @@ The matrix library provides basic operations on matrices, including addition, su
 
 ## Matrix Library Usage
 
-Matrix Initialization:
+Matrix Initialization:\
 
-Use `createMatrix` to initialize matrices.
-Use `copyMatrix` to create a deep copy of a matrix.
-Use `fill` to fill a matrix with a specified value.
+Use `createMatrix` to initialize matrices.\
+Use `copyMatrix` to create a deep copy of a matrix.\
+Use `fill` to fill a matrix with a specified value.\
 
 ### Matrix Operations:
 
