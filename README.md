@@ -81,7 +81,7 @@ Returns: Modified output matrix for multi-class classification.
 
 ### Backward Propagation (`propagate`)
 
-```c_cpp
+```c
 Gradient** propagate(NeuralNetwork *nn, matrix *AL, matrix *Y);
 ```
 
