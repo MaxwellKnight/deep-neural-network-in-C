@@ -22,7 +22,7 @@ struct NeuralNetwork {
 	matrix **W;
 	matrix **b;
 	Cache **caches;
-}
+};
 ```
 
 NeuralNetwork structure encapsulates the neural network model, including the number of layers, learning rate, weight matrices, bias matrices, and caches for intermediate values during forward propagation.
@@ -156,33 +156,33 @@ Use `fill` to fill a matrix with a specified value.
 
 ### Matrix Operations:
 
-Use operations such as `add`, `subtract`, `multiply`, etc., to perform element-wise operations.
-Use `hadamard` for element-wise multiplication.
-Use `scale` to scale matrix entries by a constant.
-Use `sum` and summation for summation along specified axes.
-Use `flatten` to convert a matrix into a vector.
-Use `apply` to apply a function element-wise to a matrix.
-Use `dot` for the dot product of matrices.
-Use `T` to transpose a matrix.
+Use operations such as `add`, `subtract`, `multiply`, etc., to perform element-wise operations.\
+Use `hadamard` for element-wise multiplication.\
+Use `scale` to scale matrix entries by a constant.\
+Use `sum` and summation for summation along specified axes.\
+Use `flatten` to convert a matrix into a vector.\
+Use `apply` to apply a function element-wise to a matrix.\
+Use `dot` for the dot product of matrices.\
+Use `T` to transpose a matrix.\
 
 ### Determinant Functions:
 
-Use `det` to compute the determinant of a matrix.
+Use `det` to compute the determinant of a matrix.\
 
 ### Probability Functions:
 
-Use `softmax` for applying the softmax function.
-Use `argmax` to find the index of the maximum value in a column vector.
+Use `softmax` for applying the softmax function.\
+Use `argmax` to find the index of the maximum value in a column vector.\
 
 ### Random Functions:
 
-Use `uniform_distribution` to generate random numbers.
-Use `randomize_matrix` to randomize the entries of a matrix.
+Use `uniform_distribution` to generate random numbers.\
+Use `randomize_matrix` to randomize the entries of a matrix.\
 
 ### Load and Save Functions:
 
-Use `load_matrix` to load a matrix from a file.
-Use `save_matrix` to save a matrix to a file.
+Use `load_matrix` to load a matrix from a file.\
+Use `save_matrix` to save a matrix to a file.\
 
 ## Contribution and License
 
