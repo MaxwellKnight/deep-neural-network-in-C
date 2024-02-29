@@ -14,7 +14,7 @@ The neural network project is divided into two primary components: the neural ne
 
 ### `NeuralNetwork` Struct
 
-```c_cpp
+```ruby
 struct NeuralNetwork {
 	int *topology;
 	int layers;
@@ -29,7 +29,7 @@ NeuralNetwork structure encapsulates the neural network model, including the num
 
 ### Neural Network Initialization (`createNetwork`)
 
-```c_cpp
+```ruby
 NeuralNetwork* createNetwork(const int topology[], int n, double learning_rate);
 ```
 
@@ -42,7 +42,7 @@ Returns: A pointer to the initialized NeuralNetwork structure.
 
 ### Forward Propagation (`forward`)
 
-```c_cpp
+```ruby
 matrix* forward(NeuralNetwork *nn, matrix *X, int isMulticalss);
 ```
 
@@ -55,7 +55,7 @@ Returns: Output matrix after forward propagation.
 
 ### Cost Functions (`cost` and `cross_entropy`)
 
-```c_cpp
+```ruby
 double cross_entropy(matrix* AL, matrix* Y);
 double cost(matrix* AL, matrix* Y);
 ```
@@ -68,7 +68,7 @@ Returns: Cost value.
 
 ### Prediction Function (`predict`)
 
-```c_cpp
+```ruby
 matrix* predict(NeuralNetwork *nn, matrix* X, int isMulticlass);
 ```
 
@@ -81,7 +81,7 @@ Returns: Modified output matrix for multi-class classification.
 
 ### Backward Propagation (`propagate`)
 
-```c
+```ruby
 Gradient** propagate(NeuralNetwork *nn, matrix *AL, matrix *Y);
 ```
 
@@ -94,7 +94,7 @@ Returns: Array of gradients for each layer.
 
 ### Update Parameters (`updateParameters`)
 
-```c_cpp
+```ruby
 void updateParameters(NeuralNetwork *nn, Gradient **grads);
 
 ```
@@ -106,7 +106,7 @@ Parameters:
 
 ### Activation Functions (`sigmoid`, `relu`, `sigmoid_backward`, `relu_backward`)
 
-```c_cpp
+```ruby
 double sigmoid_backward(double x);
 double sigmoid(double x);
 double relu(double x);
@@ -118,7 +118,7 @@ Description: Implements sigmoid and ReLU activation functions and their correspo
 
 ## Matrix Library
 
-```c_cpp
+```ruby
 # Operations on matrices
 matrix* add(matrix *A, matrix *B);
 matrix* subtract(matrix *A, matrix *B);
