@@ -17,7 +17,7 @@ typedef struct {
     matrix *labels;
 } Batch;
 
-Image** load_images(char *path, int imgCount);
+Image** load_images_csv(char *path, int imgCount);
 matrix** split_images(Image **imgs, int count);
 Batch **split_into_mini_batches(matrix **pair, int total_count, int batch_size);
 

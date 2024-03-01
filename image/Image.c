@@ -3,7 +3,8 @@
 #include <string.h>
 #include "Image.h"
 
-Image** load_images(char *path, int imgCount){
+//load images from  csv
+Image** load_images_csv(char *path, int imgCount){
 	FILE *fp = fopen(path, "r");
 	Image **imgs = (Image**)calloc(imgCount, sizeof(Image*));
 	char row[MAX_CHAR];
@@ -35,6 +36,7 @@ Image** load_images(char *path, int imgCount){
 	return imgs;
 }
 
+//split images to input matrices and label matrices
 matrix** split_images(Image **imgs, int count){
 	matrix **pair = (matrix**)malloc(sizeof(matrix*) * 2);
 	pair[0] = createMatrix(IMG_SIZE * IMG_SIZE, count, false); //features vector X
@@ -50,6 +52,7 @@ matrix** split_images(Image **imgs, int count){
 	return pair;
 }
 
+//split the set into mini batches
 Batch **split_into_mini_batches(matrix **pair, int total_count, int batch_size) {
 	int num_batches = total_count / batch_size;
 	Batch **batches = (Batch**)malloc(sizeof(Batch*) * num_batches);

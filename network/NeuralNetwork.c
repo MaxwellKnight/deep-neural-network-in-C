@@ -63,24 +63,6 @@ matrix* forward(NeuralNetwork *nn, matrix *X, int isMulticalss){
 	return AL;
 }
 
-// Function to compute the cost using the given vectors AL (Yhat) and Y for binary classification
-double cost(matrix* AL, matrix* Y) {
-	double m = (double)Y->columns; // # of labels
-	
-	matrix* log_AL = apply(AL, log);// log(AL_i)
-	matrix* one_minus_Y = subtract(fill(createMatrix(Y->rows, Y->columns, false), 1), Y); // 1 - Y_i
-	matrix* one_minus_AL = subtract(fill(createMatrix(Y->rows, Y->columns, false), 1), AL); // 1 - AL_i
-	matrix* log_one_minus_AL = apply(one_minus_AL, log); // log(1 - AL_i)
-
-	double L = dot(T(Y), log_AL) + dot(T(one_minus_Y), log_one_minus_AL); // ∑[Y_i * log(AL'-i)) + ∑((1 - Y_i) * log(1 - AL_i)]
-
-	// free intermediate calculations
-	freeMatrix(log_AL); freeMatrix(one_minus_Y);
-	freeMatrix(one_minus_AL); freeMatrix(log_one_minus_AL);
-
-	return -1.0 / m * L; 
-}
-
 // Function to compute the cost using the given vectors AL (Yhat) and Y for multi-class classification
 double cross_entropy(matrix* AL, matrix* Y) {
 	double m = (double)Y->columns; // # of labels
@@ -93,6 +75,7 @@ double cross_entropy(matrix* AL, matrix* Y) {
 	return (-1.0 / m) * L;
 }
 
+//function to predict a class for a single input 
 matrix* predict(NeuralNetwork *nn, matrix* X, int isMulticlass){
 	matrix *Ypred = forward(nn, X, isMulticlass);
 	if(isMulticlass){

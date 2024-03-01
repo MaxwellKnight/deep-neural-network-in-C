@@ -97,7 +97,7 @@ matrix* predict(NeuralNetwork *nn, matrix* X, int isMulticlass);
 
 #### Description:
 
-Performs forward propagation and modifies the output for multi-class classification.
+Performs forward propagation and outputs a prediction for a single input
 
 #### Parameters:
 
@@ -160,7 +160,7 @@ Description: Implements sigmoid and ReLU activation functions and their correspo
 ## Matrix Library
 
 ```cpp
-# Operations on matrices
+// Operations on matrices
 matrix* add(matrix *A, matrix *B);
 matrix* subtract(matrix *A, matrix *B);
 matrix* multiply(matrix *A, matrix *B);
@@ -174,12 +174,12 @@ matrix* apply(matrix *A, double (*f)(double));
 double dot(matrix *A, matrix *B);
 matrix* T(matrix *A);
 
-# determinant
+// determinant
 static double baseDet(matrix *A);
 matrix* minorA(matrix *matrix, int row, int col);
 double det(matrix *A);
 
-# Probability
+// Probability
 matrix* softmax(matrix *A);
 unsigned int argmax(matrix *A); // A is a column vector
 
@@ -189,7 +189,7 @@ The matrix library provides basic operations on matrices, including addition, su
 
 ## Matrix Library Usage
 
-#### Matrix Initialization:\
+#### Matrix Initialization:
 
 Use `createMatrix` to initialize matrices.\
 Use `copyMatrix` to create a deep copy of a matrix.\
@@ -200,7 +200,7 @@ Use `fill` to fill a matrix with a specified value.
 Use operations such as `add`, `subtract`, `multiply`, etc., to perform element-wise operations.\
 Use `hadamard` for element-wise multiplication.\
 Use `scale` to scale matrix entries by a constant.\
-Use `sum` and summation for summation along specified axes.\
+Use `sum` and `summation` for summation along specified axes.\
 Use `flatten` to convert a matrix into a vector.\
 Use `apply` to apply a function element-wise to a matrix.\
 Use `dot` for the dot product of matrices.\
